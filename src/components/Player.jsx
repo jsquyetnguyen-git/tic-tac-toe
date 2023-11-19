@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({name, symbol}) {
+function Player({name, symbol}) {
 
     const [isEditting, setIsEditting] = useState(false);
 
@@ -19,3 +19,5 @@ export default function Player({name, symbol}) {
         </li>
     )
 }
+
+export default Player;
