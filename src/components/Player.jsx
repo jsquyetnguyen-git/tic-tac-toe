@@ -21,3 +21,4 @@ function Player({name, symbol}) {
 }
 
 export default Player;
+ 
