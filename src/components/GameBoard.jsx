@@ -34,7 +34,11 @@ function GameBorad({ onSelectSquare, turns }) {
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
-              <button onClick={() => onSelectSquare(rowIndex, colIndex)} key={colIndex}>{playerSymbol}</button>
+              <button
+                disabled={playerSymbol !== null}
+                onClick={() => onSelectSquare(rowIndex, colIndex)}
+                key={colIndex}>{playerSymbol}
+              </button>
             ))}
           </ol>
         </li>
