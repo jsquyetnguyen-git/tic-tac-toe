@@ -1,10 +1,7 @@
 const initGame = [
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
 ];
 
 function GameBorad({ onSelectSquare, turns }) {
@@ -34,7 +31,12 @@ function GameBorad({ onSelectSquare, turns }) {
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
-              <button onClick={() => onSelectSquare(rowIndex, colIndex)} key={colIndex}>{playerSymbol}</button>
+              <button
+                onClick={() => onSelectSquare(rowIndex, colIndex)}
+                disabled={playerSymbol !== null}
+                key={colIndex}>
+                {playerSymbol}
+              </button>
             ))}
           </ol>
         </li>
